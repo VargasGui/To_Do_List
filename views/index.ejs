@@ -9,21 +9,56 @@
 </head>
 
 <body>
-    <form action="/create" method="post">
-        <input type="text" name="task" id="taskId" placeholder="Insira uma tarefa aqui">
-        <button id="addButton" type="submit">Adicionar</button>
-    </form>
-    <ul>
-        <% tasksList.forEach((task)=> { %>
+    <header>
+        <% if(taskId==null){ %>
+            <form action="/create" method="post">
+                <input type="text" name="task" id="taskId" placeholder="Insira uma tarefa aqui">
+                <button id="addButton" type="submit">Adicionar</button>
+            </form>
+            <% } else { %>
+                <!-- Botão Atualizar-->
+                <form action="/updateOne/<%= taskId._id %>" method="post">
+                    <input type="text" name="task" id="taskId" value="<%= taskId.task%>">
+                    <button id="addButton" type="submit">Atualizar</button>
+                </form>
+                <% } %>
+    </header>
+    <section>
+        <ul>
+            <% tasksList.forEach((task)=> { %>
 
-            <li>
-                <%= task.task %> | <%= task.date.toLocaleDateString('pt-br') %>
-            </li>
+                <li>
+                    <%= task.task %> | <%= task.date.toLocaleDateString('pt-br') %>
+                            <a href="/getById/<%= task._id %>/update">Editar</a>
+                            <a href="/getById/<%= task._id %>/delete">Apagar</a>
+                </li>
 
-            <% }) %>
-    </ul>
+                <% }) %>
+        </ul>
+    </section>
 
-    <script src="script.js"></script>
+    <% if(taskDelete !=null) { %>
+
+        <section class="modal">
+            <div class="card">
+                <a href="/">x</a>
+                <h2>Confirmação</h2>
+                <hr>
+                <p>
+                    Deseja realmente excluir a tarefa: <%= taskDelete.task %> ?
+                </p>
+                <a href="/">Não</a>
+                <a href="/confirmDelete/<%= taskDelete._id %>">Sim</a>
+    <% } %>
+
+
+
+
+            </div>
+        </section>
+
+
+        <script src="script.js"></script>
 </body>
 
 </html>

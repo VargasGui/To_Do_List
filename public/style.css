@@ -231,5 +231,42 @@ div#btns a#btnNot:hover{
     border: 1px solid red;
     background-color: red;
     
-    
+}
+
+.message{
+    padding: .6rem 1.3rem;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    width: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.message-danger{
+    background-color: #E368AE;
+    color: #2B0057;
+}
+
+.message-success{
+    background-color: #7FC88C;
+    color: #003B0B;
+}
+
+span#close-message{
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: .4rem;
+    transition: all .3s ease-in-out;
+}
+
+span#close-message:hover{
+    font-size: 1.7rem;
+    background-color: rgba(174, 0, 0, 0.928);
+    border-radius: 0.2rem;
 }

@@ -10,6 +10,14 @@
 </head>
 
 <body>
+    <% if(message != "") { %>
+    <section class="message message-<%= typeMessage %>">
+        <p><%= message %></p>
+        <span id="close-message"><i class="bi bi-x-octagon"></i></span>
+    </section>
+    <% } %>
+
+
     <header>
         <% if(taskId==null){ %>
             <h1>To Do List</h1>
@@ -19,12 +27,12 @@
             </form>
             <% } else { %>
                 <!-- Botão Atualizar-->
-                <h1>Editar Tarefa</h1>
-                <form action="/updateOne/<%= taskId._id %>" method="post">
-                    <input type="text" name="task" id="taskId" value="<%= taskId.task%>">
-                    <button id="editButton" type="submit">Atualizar</button>
-                </form>
-                <% } %>
+                    <h1>Editar Tarefa</h1>
+                    <form action="/updateOne/<%= taskId._id %>" method="post">
+                        <input type="text" name="task" id="taskId" value="<%= taskId.task%>">
+                        <button id="editButton" type="submit">Atualizar</button>
+                    </form>
+                    <% } %>
     </header>
     <section id="tasks">
         <ul>

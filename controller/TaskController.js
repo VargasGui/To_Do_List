@@ -16,7 +16,7 @@ const getAll = async (req, res) => {
              taskId: null,
              taskDelete: null,
              message,
-             typeMessage
+             typeMessage,
              });
     } catch (error) {
         res.status(500).send({ error: error.message })
@@ -78,10 +78,22 @@ const confirmDelete = async (req, res) => {
     }
 }
 
+const taskChecker = async (req, res) => {
+    try {
+        const taskCheck = await Task.findOne({_id: req.params.id})
+        taskCheck.check ? taskCheck.check = false : taskCheck.check = true
+        await Task.updateOne({_id: req.params.id}, taskCheck)
+        res.redirect("/")
+    } catch (error) {
+        res.status(500).send({error: message})
+    }
+}
+
 module.exports = {
     getAll,
     createTask,
     getById,
     updateTask,
-    confirmDelete
+    confirmDelete,
+    taskChecker
 }

@@ -3,11 +3,12 @@ const mongoose = require("mongoose")
 const taskScheema = new mongoose.Schema({
     task: {
         type: String,
-        require: true
+        required: true
     },
     check: {
         type: Boolean,
-        require: true
+        required: true,
+        default: false
     },
     date: {
         type: Date,

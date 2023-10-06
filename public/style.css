@@ -40,7 +40,7 @@ input {
 }
 
 button {
-    padding: .6rem;
+    padding: .48rem;
     width: 22%;
     background-color: #2C1D3B;
     color: #fff;
@@ -51,6 +51,7 @@ button {
     border-radius: 0;
     outline: none;
     transition: all .2s ease-in-out;
+    flex-grow: .3;
 }
 
 button:hover {
@@ -80,6 +81,7 @@ ul li {
 ul li a {
     text-decoration: none;
     color: #fff;
+    padding-left: 2rem;
 }
 
 ul li span {
@@ -206,12 +208,22 @@ div#btns a{
 
 div#btns a#btnYes{
     color: green;
-    border: 1px solid rgba(0, 128, 0, 0.802);
+    border-top: 1px;
+    border-left: 1px;
+    border-right: 0;
+    border-bottom: 0;
+    border-style: solid;
+    border-color: rgba(0, 128, 0, 0.802);
 }
 
 div#btns a#btnNot{
     color: red;
-    border: 1px solid rgba(255, 0, 0, 0.453);
+    border-top: 1px;
+    border-right: 0;
+    border-bottom: 0;
+    border-left: 0;
+    border-style: solid;
+    border-color: rgba(255, 0, 0, 0.453);
     
 }
 
@@ -219,7 +231,6 @@ div#btns a#btnYes:hover{
     width: 180%;
     font-size: 1.4rem;
     color: inherit;
-    border: 1px solid green;
     background-color: green;
     
 }
@@ -228,7 +239,6 @@ div#btns a#btnNot:hover{
     width: 180%;
     font-size: 1.4rem;
     color: inherit;
-    border: 1px solid red;
     background-color: red;
     
 }
@@ -269,4 +279,39 @@ span#close-message:hover{
     font-size: 1.7rem;
     background-color: rgba(174, 0, 0, 0.928);
     border-radius: 0.2rem;
+}
+
+ul li.check-true{
+    background-color: #8e8e8e;
+    color: #fff;
+    text-decoration: line-through;
+}
+
+ul li a.check-true::before{
+    content: "";
+    position: absolute;
+    border: #fff solid;
+    top: 22px;
+    left: 16px;
+    height: 15px;
+    width: 7px;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+ul li a.check-false::before{
+    content: "";
+    position: absolute;
+    border: #fff solid;
+    top: 22px;
+    left: 16px;
+    height: 14px;
+    width: 14px;
+    border-width: 2px;
+}
+form{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }

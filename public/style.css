@@ -1,3 +1,235 @@
-h1{
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto Slab, Arial;
+    text-decoration: none;
+}
+
+body {
+    background-color: #2C1D3B;
+    width: 100%;
+    height: 100%;
+    color: #ffffff;
+}
+
+header {
+    background-color: #7000E0;
+    padding: 3rem;
+    margin: .5rem;
+    text-align: center;
+
+
+}
+
+header h1 {
+    padding-bottom: 3rem;
+}
+
+input {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    width: 75%;
+    padding: .6rem;
+    font-size: 1rem;
+    outline: none;
+    background-color: #2C1D3B;
+    color: #fff;
+}
+
+button {
+    padding: .6rem;
+    width: 22%;
+    background-color: #2C1D3B;
+    color: #fff;
+    text-align: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    transition: all .2s ease-in-out;
+}
+
+button:hover {
+    background-color: #322C38;
+}
+
+section#tasks {
+    margin: .5rem;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    position: relative;
+    padding: .5rem;
+    background-color: #241830;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-size: 1.3rem;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+ul li span {
+    color: #ccc;
+    font-style: italic;
+    font-size: .8rem;
+    padding-left: 1rem;
+}
+
+ul li div {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+ul li:nth-child(even) {
+    background-color: inherit;
+}
+
+ul li:hover {
+    background-color: #3F1D61;
+}
+
+a#buttonEdit,
+a#buttonDelete {
+    padding: .5rem;
+    text-decoration: none;
+    color: #ccc;
+    transition: all .3s ease-in-out;
+}
+
+a#buttonEdit:hover {
+    font-size: 1.5rem;
+    background-color: #7000E0;
+    color: #fff;
+    border-radius: 5px;
+}
+
+a#buttonDelete:hover {
+    font-size: 1.5rem;
+    background-color: rgba(174, 0, 0, 0.928);
+    color: #fff;
+    border-radius: 5px;
+}
+
+section.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #00000087;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+
+}
+
+div.card {
+    position: relative;
+    width: 40rem;
+    background-color: #210F33;
+    padding: 2rem 0 0 0;
+
+}
+
+div.card h2 {
+    margin: 0;
+}
+
+div#head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem 1.5rem 2rem;
+}
+
+a#close {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 0.5rem;
+    padding: 0.7rem;
+    font-size: 1.5rem;
+}
+
+a#close:hover {
+    font-size: 1.7rem;
+    background-color: rgba(174, 0, 0, 0.928);
+    border-radius: 0.2rem;
+    transition: all .3s ease-in-out;
+}
+
+div.card hr {
+    width: 90%;
+    margin: 0 auto;
+    border-color: #ccc;
+
+}
+
+div.card p {
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 1.4rem;
+    line-height: 2rem;
+}
+
+div#btns {
+    display: flex;
+    align-items: center;
+}
+
+div#btns a{
+    padding: .5rem;
+    width: 100%;
+    text-align: center;
+    font-size: 1.3rem;
+    background-color: inherit;
+    transition: all .3s ease-in-out;
+
+
+}
+
+div#btns a#btnYes{
+    color: green;
+    border: 1px solid rgba(0, 128, 0, 0.802);
+}
+
+div#btns a#btnNot{
     color: red;
+    border: 1px solid rgba(255, 0, 0, 0.453);
+    
+}
+
+div#btns a#btnYes:hover{
+    width: 180%;
+    font-size: 1.4rem;
+    color: inherit;
+    border: 1px solid green;
+    background-color: green;
+    
+}
+
+div#btns a#btnNot:hover{
+    width: 180%;
+    font-size: 1.4rem;
+    color: inherit;
+    border: 1px solid red;
+    background-color: red;
+    
+    
 }

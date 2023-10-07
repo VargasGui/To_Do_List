@@ -282,15 +282,15 @@ span#close-message:hover{
 }
 
 ul li.check-true{
-    background-color: #8e8e8e;
-    color: #fff;
+    
+    color: #7000E0;
     text-decoration: line-through;
 }
 
 ul li a.check-true::before{
     content: "";
     position: absolute;
-    border: #fff solid;
+    border: #7000E0 solid;
     top: 22px;
     left: 16px;
     height: 15px;

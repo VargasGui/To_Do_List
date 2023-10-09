@@ -13,7 +13,7 @@ const getAll = async (req, res) => {
         const tasksList = await Task.find()
         return res.render("index", {
              tasksList,
-             taskId: null,
+             taskToUpdate: null,
              taskDelete: null,
              message,
              typeMessage,
@@ -44,11 +44,11 @@ const getById = async (req, res) => {
     try {
         const tasksList = await Task.find()
         if (req.params.method == "update") {
-            const taskId = await Task.findOne({ _id: req.params.id })
-            res.render("index", { taskId, tasksList, taskDelete: null, message, typeMessage })
+            const taskToUpdate = await Task.findOne({ _id: req.params.id })
+            res.render("index", { taskToUpdate, tasksList, taskDelete: null, message, typeMessage })
         } else {
             const taskDelete = await Task.findOne({ _id: req.params.id })
-            res.render("index", { taskId: null, tasksList, taskDelete, message, typeMessage })
+            res.render("index", { taskToUpdate: null, tasksList, taskDelete, message, typeMessage })
         }
     } catch (error) {
         res.status(500).send({ error: error.message })

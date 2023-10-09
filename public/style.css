@@ -31,7 +31,7 @@ input {
     margin: 0;
     border: none;
     border-radius: 0;
-    width: 75%;
+    width: 70%;
     padding: .6rem;
     font-size: 1rem;
     outline: none;
@@ -41,7 +41,7 @@ input {
 
 button {
     padding: .48rem;
-    width: 22%;
+    width: 15%;
     background-color: #2C1D3B;
     color: #fff;
     text-align: center;
@@ -317,4 +317,32 @@ form{
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
+}
+#btnDelAll{
+    position: relative;
+    font-size: 1.2rem;
+    color: white;
+    background-color: red;
+    padding: .48rem;
+    width: 3%;
+    background-color: #2C1D3B;
+    transition: all .3s ease-in-out;
+}
+
+#btnDelAll:hover {
+    background-color: #322C38;
+
+}
+
+#btnDelAll:hover::after {
+    content: "Apagar tudo"; /* O conteúdo do rótulo */
+    display: block;
+    position: absolute;
+    top: -3.3rem;
+    left: -0.2rem;
+    font-size: 0.9rem;
+    background-color: rgba(174, 0, 0, 0.928);
+    color: white;
+    border-radius: 10%;
+    padding: 7px;
 }

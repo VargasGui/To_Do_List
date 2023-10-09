@@ -89,11 +89,19 @@ const taskChecker = async (req, res) => {
     }
 }
 
+const deleteAll = async (req, res) => {
+    await Task.deleteMany()
+    message = "Todas as Task foram excluidas!"
+    typeMessage = "success"
+    res.redirect("/")
+}
+
 module.exports = {
     getAll,
     createTask,
     getById,
     updateTask,
     confirmDelete,
-    taskChecker
+    taskChecker,
+    deleteAll
 }

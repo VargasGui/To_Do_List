@@ -20,7 +20,6 @@
 
 
             <header>
-                <% if(taskToUpdate==null){ %>
 
                     <%- include('./components/forms', {
                             nomeForm: "To Do List" ,
@@ -29,16 +28,26 @@
                             idBtn: "addButton" ,
                             nomeBtn: "Adicionar" }) %>
 
-                <% } else { %>
+                <% if(taskToUpdate!=null) { %>
 
-                        <%- include('./components/forms', {
-                            nomeForm: "Editar Tarefa",
-                            action: `/updateOne/${taskToUpdate._id}`,
-                            value: taskToUpdate.task ,
-                            idBtn: "editButton" ,
-                            nomeBtn: "Atualizar"
-
-                        }) %>
+                    <section class="modal">
+                        <div class="card">
+                            <div id="head">
+                                <h2>Editar Tarefa</h2>
+                                <a id="close" href="/"><i class="bi bi-x-octagon"></i></a>
+                            </div>
+                            <hr>
+                            <p>
+                                Nome da Tarefa:
+                            </p>
+                            <form id="formEdit" action="/updateOne/<%= taskToUpdate._id %>" method="post">
+                                <input type="text" name="task" id="taskId" value="<%= taskToUpdate.task %>" placeholder="Digite o novo nome da tarefa">
+                                <button type="submit">Confirmar</button>
+                    
+                            </form>
+                            
+                        </div>
+                    </section>
 
                 <% } %>
 

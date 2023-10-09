@@ -346,3 +346,20 @@ form{
     border-radius: 10%;
     padding: 7px;
 }
+
+#formEdit {
+    padding-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 1.5rem 1.5rem 2rem;
+}
+#formEdit input{
+    width: 72%;
+}
+#formEdit button{
+    width: 20%;
+}
+#formEdit button:hover{
+    background-color: green;
+}

@@ -1,0 +1,29 @@
+<section class="modal">
+    <div class="card">
+        <div id="head">
+            <h2>
+                <%= title %>
+            </h2>
+            <a id="close" href="/"><i class="bi bi-x-octagon"></i></a>
+        </div>
+        <hr>
+        <p>
+            <%= message %>
+        </p>
+
+        <% if (forDel==true){%>
+            <div id="btns">
+                <a id="btnNot" href="/">Não</a>
+                <a id="btnYes" href="/confirmDelete/<%= taskDelete._id %>">Sim</a>
+            </div>
+
+            <%} else {%>
+                <form id="formEdit" action="/updateOne/<%= taskToUpdate._id %>" method="post">
+                    <input type="text" name="task" id="taskId" value="<%= taskToUpdate.task %>"
+                        placeholder="Digite o novo nome da tarefa">
+                    <button type="submit">Confirmar</button>
+
+                </form>
+                <% } %>
+    </div>
+</section>

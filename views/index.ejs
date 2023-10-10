@@ -29,25 +29,12 @@
                             nomeBtn: "Adicionar" }) %>
 
                 <% if(taskToUpdate!=null) { %>
-
-                    <section class="modal">
-                        <div class="card">
-                            <div id="head">
-                                <h2>Editar Tarefa</h2>
-                                <a id="close" href="/"><i class="bi bi-x-octagon"></i></a>
-                            </div>
-                            <hr>
-                            <p>
-                                Nome da Tarefa:
-                            </p>
-                            <form id="formEdit" action="/updateOne/<%= taskToUpdate._id %>" method="post">
-                                <input type="text" name="task" id="taskId" value="<%= taskToUpdate.task %>" placeholder="Digite o novo nome da tarefa">
-                                <button type="submit">Confirmar</button>
+                    <%- include('./components/modalDelAndUpd.ejs', {
+                        title: 'Editar Tarefa',
+                        message: 'Nome da Tarefa',
+                        forDel: false
+                    }) %>
                     
-                            </form>
-                            
-                        </div>
-                    </section>
 
                 <% } %>
 
@@ -72,7 +59,13 @@
             </section>
 
             <% if(taskDelete !=null) { %>
-                <%- include('./components/modalDel.ejs') %>
+                <%- include('./components/modalDelAndUpd.ejs', {
+                    title: 'Confirmação',
+                    message: `Deseja realmente excluir a tarefa: ${taskDelete.task} ?`,
+                    forDel: true
+                    
+                }) %>
+                
                     <% } %>
 
 
